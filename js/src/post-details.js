@@ -138,10 +138,12 @@ $(document).ready(function () {
   var isSidebarCouldDisplay = CONFIG.sidebar.display === 'post' ||
       CONFIG.sidebar.display === 'always';
   var hasTOC = $tocContent.length > 0 && $tocContent.html().trim().length > 0;
-  if (isSidebarCouldDisplay && hasTOC) {
-    CONFIG.motion ?
-      (NexT.motion.middleWares.sidebar = function () {
-          NexT.utils.displaySidebar();
-      }) : NexT.utils.displaySidebar();
+  if(CONFIG.sidebar.use_motion) {
+    if (isSidebarCouldDisplay && hasTOC) {
+      CONFIG.motion ?
+        (NexT.motion.middleWares.sidebar = function () {
+            NexT.utils.displaySidebar();
+        }) : NexT.utils.displaySidebar();
+    }
   }
 });

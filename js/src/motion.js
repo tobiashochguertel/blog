@@ -165,7 +165,10 @@ $(document).ready(function () {
       }
     }
   };
-  sidebarToggleMotion.init();
+  if(CONFIG.sidebar.use_motion) {
+    sidebarToggleMotion.init();
+  }
+
 
   NexT.motion.integrator = {
     queue: [],

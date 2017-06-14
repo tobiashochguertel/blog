@@ -199,6 +199,7 @@ NexT.utils = NexT.$u = {
   },
 
   displaySidebar: function () {
+    console.log("displaySidebar");
     if (!this.isDesktop() || this.isPisces()) {
       return;
     }

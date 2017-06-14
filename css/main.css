@@ -932,7 +932,7 @@ pre .javascript .function {
   right: 30px;
   z-index: 1050;
   padding: 0 6px;
-  width: 24px;
+  width: initial;
   background: #222;
   font-size: 12px;
   opacity: 1;
@@ -1677,7 +1677,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff67ff;
+  background: #95861a;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2526,4 +2526,68 @@ embed {
 }
 .links-of-blogroll-inline .links-of-blogroll-item {
   display: inline-block;
+}
+.headband {
+  background: #fff;
+}
+.sidebar {
+  width: 320px;
+  background-color: #f9f9f9;
+  box-shadow: none;
+}
+.page-home .sidebar {
+  background-color: #f9f9f9;
+}
+.post-toc .nav .nav-child {
+  display: block;
+}
+@media (min-width: 992px) {
+  .sidebar-toggle {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .sidebar-toggle {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .sidebar-toggle {
+    display: none;
+  }
+}
+.header-inner {
+  margin: 0 320px 0 auto;
+  width: inherit;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media (min-width: 1600px) {
+  .container .header-inner {
+    width: inherit;
+  }
+}
+.main {
+  padding-bottom: 150px;
+}
+.main-inner {
+  margin: 0 320px 0 auto;
+  width: inherit;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media (min-width: 1600px) {
+  .container .main-inner {
+    width: inherit;
+  }
+}
+.footer-inner {
+  box-sizing: border-box;
+  margin: 20px 320px 20px auto;
+  width: inherit;
+}
+@media (min-width: 1600px) {
+  .container .footer-inner {
+    width: inherit;
+  }
 }

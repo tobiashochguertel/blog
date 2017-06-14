@@ -368,7 +368,8 @@
 <!-- ![Added Docker registry in "project/default/overview"](OpenShift-Host/OpenShift-Host4.png) -->
 <img src="/blog/2017/06/14/OpenShift-Host/OpenShift-Host4.png" alt="Added Docker registry in 'project/default/overview'" title="Added Docker registry in 'project/default/overview'">
 <p><a href="https://github.com/openshift/origin/issues/10973" target="_blank" rel="external">https://github.com/openshift/origin/issues/10973</a></p>
-<p><img src="OpenShift-Host/OpenShift-Host5.png" alt=""><br><img src="/blog/2017/06/14/OpenShift-Host/OpenShift-Host5.png" alt="OpenShift-Host5.png" title=""></p>
+<!-- ![](OpenShift-Host/OpenShift-Host5.png) -->
+<img src="/blog/2017/06/14/OpenShift-Host/OpenShift-Host5.png" alt="OpenShift-Host5.png" title="">
 <p><a href="http://appagile.io/2017/03/29/how-to-push-a-docker-image-from-docker-registry-to-openshift-registry/" target="_blank" rel="external">http://appagile.io/2017/03/29/how-to-push-a-docker-image-from-docker-registry-to-openshift-registry/</a><br><a href="https://stackoverflow.com/questions/36655281/openshift-origin-run-app-against-insecure-registry-yields-stuck-pod-with-error" target="_blank" rel="external">https://stackoverflow.com/questions/36655281/openshift-origin-run-app-against-insecure-registry-yields-stuck-pod-with-error</a></p>
 <h2 id="RedHat-Reposync-Local-RedHat-Repositories"><a href="#RedHat-Reposync-Local-RedHat-Repositories" class="headerlink" title="RedHat Reposync - Local RedHat Repositories:"></a>RedHat Reposync - Local RedHat Repositories:</h2><ul>
 <li><a href="https://www.cyberciti.biz/faq/redhat-centos-linux-yum-update-exclude-packages/" target="_blank" rel="external">How to Exclude Packages from Reposync</a></li>

@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tobiashochguertel.github.io/blog/2017/06/14/OpenShift-Host/</loc>
+    
+    <lastmod>2017-06-14T22:46:42.385Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tobiashochguertel.github.io/blog/2017/06/15/Test-Post/</loc>
+    
+    <lastmod>2017-06-14T22:25:49.306Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tobiashochguertel.github.io/blog/2017/06/14/hello-world/</loc>
+    
+    <lastmod>2017-06-14T22:06:27.864Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://tobiashochguertel.github.io/blog/categories/index.html</loc>
     
     <lastmod>2017-06-14T18:44:31.209Z</lastmod>
@@ -9,23 +30,9 @@
   </url>
   
   <url>
-    <loc>https://tobiashochguertel.github.io/blog/2017/06/14/My-New-Post/</loc>
-    
-    <lastmod>2017-06-14T18:43:39.814Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://tobiashochguertel.github.io/blog/tags/index.html</loc>
     
     <lastmod>2017-06-14T18:43:35.720Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tobiashochguertel.github.io/blog/2017/06/14/hello-world/</loc>
-    
-    <lastmod>2017-06-14T15:51:38.226Z</lastmod>
     
   </url>
   

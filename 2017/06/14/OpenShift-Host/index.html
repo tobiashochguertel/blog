@@ -112,7 +112,7 @@
 <meta property="og:image" content="https://tobiashochguertel.github.io/blog/2017/06/14/OpenShift-Host/OpenShift-Host11.png">
 <meta property="og:image" content="https://tobiashochguertel.github.io/blog/2017/06/14/OpenShift-Host/OpenShift-Host12.png">
 <meta property="og:image" content="https://tobiashochguertel.github.io/blog/2017/06/14/OpenShift-Host/OpenShift-Host13.png">
-<meta property="og:updated_time" content="2017-06-15T16:05:42.911Z">
+<meta property="og:updated_time" content="2017-06-15T16:06:33.602Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenShift Host">
 <meta name="twitter:description" content="OpenShift HostKonfiguration von Virtuellen Maschinen mit OpenShift auf dem KVM Host.">
@@ -482,7 +482,7 @@
 </ul>
 <p>File: <code>/etc/sysconfig/docker-storage-setup</code><br><figure class="highlight ini"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">DEVS</span>=/dev/vdb</div><div class="line"><span class="attr">VG</span>=docker-vg</div></pre></td></tr></table></figure></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">systemctl \</div><div class="line"> stop docker</div><div class="line"></div><div class="line">rm -rf /var/lib/docker</div><div class="line"></div><div class="line">docker-storage-setup</div><div class="line"></div><div class="line">systemctl \</div><div class="line"> start docker</div><div class="line"> &amp;&amp; \</div><div class="line"> systemctl \</div><div class="line">  status docker</div></pre></td></tr></table></figure>
-<h1 id="Virtual-Machine-vm2-clone"><a href="#Virtual-Machine-vm2-clone" class="headerlink" title="Virtual-Machine (vm2-clone)"></a>Virtual-Machine (vm2-clone)</h1><ul>
+<h1 id="Virtual-Machine-vm2-clone"><a href="#Virtual-Machine-vm2-clone" class="headerlink" title="Virtual-Machine (vm2-clone)"></a>Virtual-Machine (<code>vm2-clone</code>)</h1><ul>
 <li>Create an Second VM from current-state of <code>vm1-clone</code></li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">virsh-save-vm \</div><div class="line"> -n vm1-clone</div></pre></td></tr></table></figure>

@@ -1677,7 +1677,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #4effff;
+  background: #ff42fc;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2583,10 +2583,10 @@ embed {
 .footer-inner {
   box-sizing: border-box;
   margin: 20px 320px 20px auto;
-  width: inherit;
+  width: initial;
 }
 @media (min-width: 1600px) {
   .container .footer-inner {
-    width: inherit;
+    width: initial;
   }
 }

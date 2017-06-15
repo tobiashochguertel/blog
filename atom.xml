@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://tobiashochguertel.github.io/blog/"/>
-  <updated>2017-06-15T17:39:18.626Z</updated>
+  <updated>2017-06-15T17:46:53.836Z</updated>
   <id>https://tobiashochguertel.github.io/blog/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://tobiashochguertel.github.io/blog/2017/06/14/OpenShift-Host/"/>
     <id>https://tobiashochguertel.github.io/blog/2017/06/14/OpenShift-Host/</id>
     <published>2017-06-14T16:01:15.000Z</published>
-    <updated>2017-06-15T17:39:18.626Z</updated>
+    <updated>2017-06-15T17:46:53.836Z</updated>
     
     <content type="html"><![CDATA[<h1 id="OpenShift-Host"><a href="#OpenShift-Host" class="headerlink" title="OpenShift Host"></a>OpenShift Host</h1><p>Konfiguration von Virtuellen Maschinen mit OpenShift Service auf dem KVM Host. (<em>Notizen der Umsetzung, keine Tutorial.</em>)</p>
 <a id="more"></a>
@@ -417,7 +417,12 @@
 <li><a href="https://blog.openshift.com/pushing-application-images-to-an-external-registry/" target="_blank" rel="external">Blog.Openshift.com - Pushing application images to an external registry</a></li>
 </ul>
 <h3 id="STEP-1-CREATE-A-NEW-PROJECT"><a href="#STEP-1-CREATE-A-NEW-PROJECT" class="headerlink" title="STEP 1: CREATE A NEW PROJECT:"></a>STEP 1: CREATE A NEW PROJECT:</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">oc new-project ext-image-push</div></pre></td></tr></table></figure>
-<h3 id="STEP-2-SETUP-DOCKER-CREDENTIALS-AS-A-SECRET"><a href="#STEP-2-SETUP-DOCKER-CREDENTIALS-AS-A-SECRET" class="headerlink" title="STEP 2: SETUP DOCKER CREDENTIALS AS A SECRET:"></a>STEP 2: SETUP DOCKER CREDENTIALS AS A SECRET:</h3><p><strong>Alternative way, without json/yaml docker configuration file:</strong></p>
+<h3 id="STEP-2-SETUP-DOCKER-CREDENTIALS-AS-A-SECRET"><a href="#STEP-2-SETUP-DOCKER-CREDENTIALS-AS-A-SECRET" class="headerlink" title="STEP 2: SETUP DOCKER CREDENTIALS AS A SECRET:"></a>STEP 2: SETUP DOCKER CREDENTIALS AS A SECRET:</h3><ul>
+<li>Docker-Registry Zugangsdaten im OpenShift Service hinterlegen. (<code>oc get secret</code>)</li>
+<li>Hinterlegte Zugangsdaten dem Builder bekannt machen. (<code>oc edit sa builder</code>)</li>
+<li>Die Zugangsdaten in einer Build Konfiguration (Build Vorgang) verwenden um z.b. pushen des Container Artefakt’s zur entfernten Docker-Registry (<code>internal</code> o. <code>docker.io</code>). (<code>oc edit bc time</code>)</li>
+</ul>
+<p><strong>Alternative way, without json/yaml docker configuration file:</strong></p>
 <ul>
 <li><strong>Prefered Way!!</strong></li>
 <li>Use the (this) Alternative way to create new docker secrets, not only that the type will be <code>kubernetes.io/dockercfg</code>, even the publishing will work fine to our internal privat nexus3 registry with https and insecure!</li>

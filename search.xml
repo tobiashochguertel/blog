@@ -69,7 +69,7 @@
 <li>Von mehreren Netzwerk Clients aus z.B. <code>openshift.hochguertel.local</code> o. <code>T430-1.hochguertel.local</code>.</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ping vm1.openshift</div><div class="line">ping vm1.openshift.hochguertel.local</div></pre></td></tr></table></figure>
-<h2 id="Wir-installieren-die-OpenShift-Origin-Service"><a href="#Wir-installieren-die-OpenShift-Origin-Service" class="headerlink" title="Wir installieren die OpenShift Origin Service."></a>Wir installieren die OpenShift Origin Service.</h2><h3 id="Subscription-Management"><a href="#Subscription-Management" class="headerlink" title="Subscription Management"></a>Subscription Management</h3><ul>
+<h2 id="Wir-installieren-den-OpenShift-Origin-Service"><a href="#Wir-installieren-den-OpenShift-Origin-Service" class="headerlink" title="Wir installieren den OpenShift-Origin Service."></a>Wir installieren den OpenShift-Origin Service.</h2><h3 id="Subscription-Management"><a href="#Subscription-Management" class="headerlink" title="Subscription Management"></a>Subscription Management</h3><ul>
 <li><a href="https://access.redhat.com/" target="_blank" rel="external">RedHat.com - Subscription Manager</a></li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">subscription-manager register</div><div class="line">subscription-manager attach</div><div class="line">subscription-manager refresh</div></pre></td></tr></table></figure>

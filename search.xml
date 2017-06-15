@@ -397,10 +397,8 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">nmcli connection modify docker0 connection.zone trusted</div><div class="line">systemctl stop NetworkManager.service</div><div class="line">firewall-cmd --permanent --zone=trusted --change-interface=docker0</div><div class="line">systemctl start NetworkManager.service</div><div class="line">nmcli connection modify docker0 connection.zone trusted</div><div class="line">systemctl restart docker.service</div></pre></td></tr></table></figure>
 <p><em>Without this, Docker Container’s can’t access the external network! No github.com or docker.io and even no hochguertel.local, without adding docker0 to the trusted zones.</em></p>
 <h2 id="PUSHING-APPLICATION-IMAGES-TO-AN-EXTERNAL-REGISTRY"><a href="#PUSHING-APPLICATION-IMAGES-TO-AN-EXTERNAL-REGISTRY" class="headerlink" title="PUSHING APPLICATION IMAGES TO AN EXTERNAL REGISTRY"></a>PUSHING APPLICATION IMAGES TO AN EXTERNAL REGISTRY</h2><ul>
-<li><p><a href="https://blog.openshift.com/pushing-application-images-to-an-external-registry/" target="_blank" rel="external">Blog.Openshift.com - Pushing application images to an external registry</a></p>
-</li>
-<li><p>Zugangsdaten für Docker-Registry im OpenShift Service hinterlegen. (<code>oc get secret</code>)</p>
-</li>
+<li><a href="https://blog.openshift.com/pushing-application-images-to-an-external-registry/" target="_blank" rel="external">Blog.Openshift.com - Pushing application images to an external registry</a></li>
+<li>Zugangsdaten für Docker-Registry im OpenShift Service hinterlegen. (<code>oc get secret</code>)</li>
 <li>Zugangsdaten dem Builder bekannt machen. (<code>oc edit sa builder</code>)</li>
 <li>Zugangsdaten in einer Build Konfiguration (Build Vorgang) verwenden. <ul>
 <li>z.b. pushen des Container Artefakt’s zur entfernten Docker-Registry (<code>internal</code> o. <code>docker.io</code>). (<code>oc edit bc time</code>)</li>

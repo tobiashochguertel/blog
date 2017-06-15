@@ -112,7 +112,7 @@
 <meta property="og:image" content="https://tobiashochguertel.github.io/blog/2017/06/14/OpenShift-Host/OpenShift-Host11.png">
 <meta property="og:image" content="https://tobiashochguertel.github.io/blog/2017/06/14/OpenShift-Host/OpenShift-Host12.png">
 <meta property="og:image" content="https://tobiashochguertel.github.io/blog/2017/06/14/OpenShift-Host/OpenShift-Host13.png">
-<meta property="og:updated_time" content="2017-06-15T17:46:53.836Z">
+<meta property="og:updated_time" content="2017-06-15T17:49:25.116Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenShift Host">
 <meta name="twitter:description" content="OpenShift HostKonfiguration von Virtuellen Maschinen mit OpenShift Service auf dem KVM Host. (Notizen der Umsetzung, keine Tutorial.)">
@@ -790,17 +790,16 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">nmcli connection modify docker0 connection.zone trusted</div><div class="line">systemctl stop NetworkManager.service</div><div class="line">firewall-cmd --permanent --zone=trusted --change-interface=docker0</div><div class="line">systemctl start NetworkManager.service</div><div class="line">nmcli connection modify docker0 connection.zone trusted</div><div class="line">systemctl restart docker.service</div></pre></td></tr></table></figure>
 <p><em>Without this, Docker Container’s can’t access the external network! No github.com or docker.io and even no hochguertel.local, without adding docker0 to the trusted zones.</em></p>
 <h2 id="Pushing-Application-Images-to-an-External-Registry"><a href="#Pushing-Application-Images-to-an-External-Registry" class="headerlink" title="Pushing Application Images to an External Registry"></a>Pushing Application Images to an External Registry</h2><ul>
-<li><a href="https://blog.openshift.com/pushing-application-images-to-an-external-registry/" target="_blank" rel="external">Blog.Openshift.com - Pushing application images to an external registry</a></li>
-</ul>
-<h3 id="STEP-1-CREATE-A-NEW-PROJECT"><a href="#STEP-1-CREATE-A-NEW-PROJECT" class="headerlink" title="STEP 1: CREATE A NEW PROJECT:"></a>STEP 1: CREATE A NEW PROJECT:</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">oc new-project ext-image-push</div></pre></td></tr></table></figure>
-<h3 id="STEP-2-SETUP-DOCKER-CREDENTIALS-AS-A-SECRET"><a href="#STEP-2-SETUP-DOCKER-CREDENTIALS-AS-A-SECRET" class="headerlink" title="STEP 2: SETUP DOCKER CREDENTIALS AS A SECRET:"></a>STEP 2: SETUP DOCKER CREDENTIALS AS A SECRET:</h3><ul>
-<li>Docker-Registry Zugangsdaten im OpenShift Service hinterlegen. (<code>oc get secret</code>)</li>
+<li><p><a href="https://blog.openshift.com/pushing-application-images-to-an-external-registry/" target="_blank" rel="external">Blog.Openshift.com - Pushing application images to an external registry</a></p>
+</li>
+<li><p>Docker-Registry Zugangsdaten im OpenShift Service hinterlegen. (<code>oc get secret</code>)</p>
+</li>
 <li>Hinterlegte Zugangsdaten dem Builder bekannt machen. (<code>oc edit sa builder</code>)</li>
 <li>Die Zugangsdaten in einer Build Konfiguration (Build Vorgang) verwenden um z.b. pushen des Container Artefakt’s zur entfernten Docker-Registry (<code>internal</code> o. <code>docker.io</code>). (<code>oc edit bc time</code>)</li>
 </ul>
-<p><strong>Alternative way, without json/yaml docker configuration file:</strong></p>
-<ul>
-<li><strong>Prefered Way!!</strong></li>
+<h3 id="STEP-1-CREATE-A-NEW-PROJECT"><a href="#STEP-1-CREATE-A-NEW-PROJECT" class="headerlink" title="STEP 1: CREATE A NEW PROJECT:"></a>STEP 1: CREATE A NEW PROJECT:</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">oc new-project ext-image-push</div></pre></td></tr></table></figure>
+<h3 id="STEP-2-SETUP-DOCKER-CREDENTIALS-AS-A-SECRET"><a href="#STEP-2-SETUP-DOCKER-CREDENTIALS-AS-A-SECRET" class="headerlink" title="STEP 2: SETUP DOCKER CREDENTIALS AS A SECRET:"></a>STEP 2: SETUP DOCKER CREDENTIALS AS A SECRET:</h3><ul>
+<li><strong>Alternative way, without json/yaml docker configuration file: Prefered Way!!</strong></li>
 <li>Use the (this) Alternative way to create new docker secrets, not only that the type will be <code>kubernetes.io/dockercfg</code>, even the publishing will work fine to our internal privat nexus3 registry with https and insecure!</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">oc \</div><div class="line"> secrets \</div><div class="line"> new-dockercfg dockerhub \</div><div class="line"> --docker-server=DOCKER_REGISTRY_SERVER \</div><div class="line"> --docker-username=DOCKER_USER \</div><div class="line"> --docker-password=DOCKER_PASSWORD \</div><div class="line"> --docker-email=DOCKER_EMAIL</div></pre></td></tr></table></figure>

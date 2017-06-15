@@ -1677,7 +1677,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff42fc;
+  background: #09f7cd;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2536,6 +2536,18 @@ embed {
 }
 .page-home .sidebar {
   background-color: #f9f9f9;
+}
+.post-toc ol {
+  font-size: 10px;
+}
+.post-toc .nav-item {
+  line-height: 1.8;
+}
+.sidebar a {
+  border-bottom: 0px solid;
+}
+.post-toc ol a {
+  color: #000;
 }
 .post-toc .nav .nav-child {
   display: block;

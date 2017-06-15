@@ -58,7 +58,7 @@
 <li>Wir registrieren den neue Host <code>vm1.openshift.hochguertel.local</code> im Netzwerk.</li>
 <li>Installieren den OpenShift-Origin Service Software auf dem Host <code>vm1.openshift.hochguertel.local</code>.</li>
 <li>Konfigurieren den OpenShift-Origin Service so das er mit unserer Docker-Registrierung zusammenarbeitet.</li>
-<li>Abschließend zeigen wir, wie wir ein paar Beispiel Anwendungen als Container auf dem OPenShift Service ausführen.</li>
+<li>Abschließend zeigen wir, wie wir ein paar Beispiel Anwendungen als Container auf dem OpenShift Service ausführen.</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ssh \</div><div class="line"> -l root \</div><div class="line"> 192.168.0.104</div></pre></td></tr></table></figure>
 <h2 id="Wir-registrieren-den-neue-Host-vm1-openshift-hochguertel-local-im-Netzwerk"><a href="#Wir-registrieren-den-neue-Host-vm1-openshift-hochguertel-local-im-Netzwerk" class="headerlink" title="Wir registrieren den neue Host vm1.openshift.hochguertel.local im Netzwerk."></a>Wir registrieren den neue Host <code>vm1.openshift.hochguertel.local</code> im Netzwerk.</h2><ul>
@@ -121,8 +121,11 @@
 </ul>
 <p>File: <code>/etc/sysconfig/docker-storage-setup</code><br><figure class="highlight ini"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">DEVS</span>=/dev/vdb</div><div class="line"><span class="attr">VG</span>=docker-vg</div></pre></td></tr></table></figure></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">systemctl \</div><div class="line"> stop docker</div><div class="line"></div><div class="line">rm -rf /var/lib/docker</div><div class="line"></div><div class="line">docker-storage-setup</div><div class="line"></div><div class="line">systemctl \</div><div class="line"> start docker</div><div class="line"> &amp;&amp; \</div><div class="line"> systemctl \</div><div class="line">  status docker</div></pre></td></tr></table></figure>
-<h1 id="Virtual-Machine-vm2-clone"><a href="#Virtual-Machine-vm2-clone" class="headerlink" title="Virtual-Machine (vm2-clone)"></a>Virtual-Machine (<code>vm2-clone</code>)</h1><ul>
-<li>Create an Second VM from current-state of <code>vm1-clone</code></li>
+<h1 id="Virtual-Machine-vm2-clone"><a href="#Virtual-Machine-vm2-clone" class="headerlink" title="Virtual-Machine (vm2-clone)"></a>Virtual-Machine (<code>vm2-clone</code>)</h1><p>Wir richten die Virtuellen Machine <code>vm2-clone</code> als OpenShift-Origin Service ein, nutzen die <code>vm1-clone</code> als Vorlage.</p>
+<ul>
+<li>Erstellen eines Kopie von <code>vm1-clone</code>.</li>
+<li>Geben der Kopie den neuen Namen <code>vm2-clome</code>.</li>
+<li>Wir registrieren den neue Host <code>vm2.openshift.hochguertel.local</code> im Netzwerk.</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">virsh-save-vm \</div><div class="line"> -n vm1-clone</div></pre></td></tr></table></figure>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">virsh \</div><div class="line"> dumpxml \</div><div class="line"> vm1-clone-save-25.12.2016-time-03-39 \</div><div class="line"><span class="meta"> &gt;</span><span class="bash"> vm2-clone.xml</span></div></pre></td></tr></table></figure>

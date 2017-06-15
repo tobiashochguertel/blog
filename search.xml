@@ -400,8 +400,8 @@
 <li>Tutorial: <a href="https://blog.openshift.com/pushing-application-images-to-an-external-registry/" target="_blank" rel="external">Blog.Openshift.com - Pushing application images to an external registry</a></li>
 <li>Zugangsdaten für Docker-Registry im OpenShift Service hinterlegen. (<code>oc get secret</code>)</li>
 <li>Zugangsdaten dem Builder bekannt machen. (<code>oc edit sa builder</code>)</li>
-<li>Zugangsdaten in einer Build Konfiguration (Build Vorgang) verwenden. <ul>
-<li>z.b. pushen des Container Artefakt’s zur entfernten Docker-Registry (<code>internal</code> o. <code>docker.io</code>). (<code>oc edit bc time</code>)</li>
+<li>Zugangsdaten in einer Build Konfiguration (Build Vorgang) verwenden. (<code>oc edit bc time</code>)<ul>
+<li>z.b. pushen des Container Artefakt’s zur entfernten Docker-Registry (<code>internal</code> o. <code>docker.io</code>).</li>
 </ul>
 </li>
 </ul>

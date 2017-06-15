@@ -112,7 +112,7 @@
 <meta property="og:image" content="https://tobiashochguertel.github.io/blog/2017/06/14/OpenShift-Host/OpenShift-Host11.png">
 <meta property="og:image" content="https://tobiashochguertel.github.io/blog/2017/06/14/OpenShift-Host/OpenShift-Host12.png">
 <meta property="og:image" content="https://tobiashochguertel.github.io/blog/2017/06/14/OpenShift-Host/OpenShift-Host13.png">
-<meta property="og:updated_time" content="2017-06-15T15:49:46.256Z">
+<meta property="og:updated_time" content="2017-06-15T15:54:59.215Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenShift Host">
 <meta name="twitter:description" content="OpenShift HostKonfiguration von Virtuellen Maschinen mit OpenShift auf dem KVM Host.">
@@ -414,7 +414,13 @@
 <h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Saves the current state of an running Virtual-Machine.</div><div class="line"></div><div class="line">Usage : virsh-save-vm [ -n &lt;virtual-machine name&gt; ] [ -h ]</div><div class="line"></div><div class="line">&lt;virtual-machine name&gt;   Selects the Virtual-Machine which is to save.</div><div class="line">                         ... &lt;virtual-machine name&gt; has to be more than 1 character.</div></pre></td></tr></table></figure>
 <p><strong>Example</strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">virsh-save-vm \</div><div class="line"> -n vm1-clone</div></pre></td></tr></table></figure>
-<h1 id="Virtual-machine-vm1-clone"><a href="#Virtual-machine-vm1-clone" class="headerlink" title="Virtual-machine (vm1-clone)"></a>Virtual-machine (<code>vm1-clone</code>)</h1><p>Wir richten die Virtuellen Machine <code>vm1-clone</code> als OpenShift-Origin Service ein. Wir registrieren den neue Host <code>vm1.openshift.hochguertel.local</code><br>im Netzwerk und installieren die OpenShift Origin Service. Wir installieren die OpenShift-Origin Service Software. Konfigurieren den<br>OpenShift-Origin Service so das er mit unserer Docker-Registrierung zusammenarbeitet. Abschließend werden ein paar Beispiele Anwendung in den<br>OpenShift Container installiert.</p>
+<h1 id="Virtual-machine-vm1-clone"><a href="#Virtual-machine-vm1-clone" class="headerlink" title="Virtual-machine (vm1-clone)"></a>Virtual-machine (<code>vm1-clone</code>)</h1><p>Wir richten die Virtuellen Machine <code>vm1-clone</code> als OpenShift-Origin Service ein.</p>
+<ul>
+<li>Wir registrieren den neue Host <code>vm1.openshift.hochguertel.local</code> im Netzwerk.</li>
+<li>Installieren den OpenShift-Origin Service Software auf dem Host <code>vm1.openshift.hochguertel.local</code>.</li>
+<li>Konfigurieren den OpenShift-Origin Service so das er mit unserer Docker-Registrierung zusammenarbeitet.</li>
+<li>Abschließend zeigen wir, wie wir ein paar Beispiel Anwendungen als Container auf dem OPenShift Service ausführen.</li>
+</ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ssh \</div><div class="line"> -l root \</div><div class="line"> 192.168.0.104</div></pre></td></tr></table></figure>
 <h2 id="Wir-registrieren-den-neue-Host-vm1-openshift-hochguertel-local-im-Netzwerk"><a href="#Wir-registrieren-den-neue-Host-vm1-openshift-hochguertel-local-im-Netzwerk" class="headerlink" title="Wir registrieren den neue Host vm1.openshift.hochguertel.local im Netzwerk."></a>Wir registrieren den neue Host <code>vm1.openshift.hochguertel.local</code> im Netzwerk.</h2><ul>
 <li>Überprüfen der DNS Registrierung ob die DNS Einträge korrekt aufgelöst werden.</li>

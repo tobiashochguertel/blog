@@ -93,13 +93,13 @@
 
 
 
-<meta name="description" content="OpenShift HostNotizen der Umsetzung!Konfiguration von Virtuellen Maschinen mit OpenShift Service auf dem KVM Host.">
+<meta name="description" content="OpenShift HostKonfiguration von Virtuellen Maschinen mit OpenShift Service auf dem KVM Host. (Notizen der Umsetzung, keine Tutorial.)">
 <meta name="keywords" content="OpenShift">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpenShift Host">
 <meta property="og:url" content="https://tobiashochguertel.github.io/blog/2017/06/14/OpenShift-Host/index.html">
 <meta property="og:site_name" content="TH&#39;s Notes">
-<meta property="og:description" content="OpenShift HostNotizen der Umsetzung!Konfiguration von Virtuellen Maschinen mit OpenShift Service auf dem KVM Host.">
+<meta property="og:description" content="OpenShift HostKonfiguration von Virtuellen Maschinen mit OpenShift Service auf dem KVM Host. (Notizen der Umsetzung, keine Tutorial.)">
 <meta property="og:image" content="https://tobiashochguertel.github.io/blog/2017/06/14/OpenShift-Host/OpenShift-Host3.png">
 <meta property="og:image" content="https://tobiashochguertel.github.io/blog/2017/06/14/OpenShift-Host/OpenShift-Host4.png">
 <meta property="og:image" content="https://tobiashochguertel.github.io/blog/2017/06/14/OpenShift-Host/OpenShift-Host5.png">
@@ -112,10 +112,10 @@
 <meta property="og:image" content="https://tobiashochguertel.github.io/blog/2017/06/14/OpenShift-Host/OpenShift-Host11.png">
 <meta property="og:image" content="https://tobiashochguertel.github.io/blog/2017/06/14/OpenShift-Host/OpenShift-Host12.png">
 <meta property="og:image" content="https://tobiashochguertel.github.io/blog/2017/06/14/OpenShift-Host/OpenShift-Host13.png">
-<meta property="og:updated_time" content="2017-06-15T17:31:09.060Z">
+<meta property="og:updated_time" content="2017-06-15T17:32:23.669Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenShift Host">
-<meta name="twitter:description" content="OpenShift HostNotizen der Umsetzung!Konfiguration von Virtuellen Maschinen mit OpenShift Service auf dem KVM Host.">
+<meta name="twitter:description" content="OpenShift HostKonfiguration von Virtuellen Maschinen mit OpenShift Service auf dem KVM Host. (Notizen der Umsetzung, keine Tutorial.)">
 <meta name="twitter:image" content="https://tobiashochguertel.github.io/blog/2017/06/14/OpenShift-Host/OpenShift-Host3.png">
 
 
@@ -398,7 +398,7 @@
       
 
       
-        <h1 id="OpenShift-Host"><a href="#OpenShift-Host" class="headerlink" title="OpenShift Host"></a>OpenShift Host</h1><p>Notizen der Umsetzung!<br>Konfiguration von Virtuellen Maschinen mit OpenShift Service auf dem KVM Host.</p>
+        <h1 id="OpenShift-Host"><a href="#OpenShift-Host" class="headerlink" title="OpenShift Host"></a>OpenShift Host</h1><p>Konfiguration von Virtuellen Maschinen mit OpenShift Service auf dem KVM Host. (<em>Notizen der Umsetzung, keine Tutorial.</em>)</p>
 <a id="more"></a>
 <h2 id="Network-Configuration"><a href="#Network-Configuration" class="headerlink" title="Network Configuration"></a>Network Configuration</h2><p><strong>File: <code>/etc/sysconfig/network-scripts/ifcfg-br0</code></strong><br><figure class="highlight ini"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="attr">DEVICE</span>=br0</div><div class="line"><span class="attr">ONBOOT</span>=<span class="literal">yes</span></div><div class="line"><span class="attr">TYPE</span>=Bridge</div><div class="line"><span class="attr">BOOTPROTO</span>=dhcp</div><div class="line"><span class="attr">PEERDNS</span>=<span class="literal">no</span></div><div class="line"><span class="attr">IPV6INIT</span>=<span class="literal">yes</span></div><div class="line"><span class="attr">IPV6_AUTOCONF</span>=<span class="literal">yes</span></div><div class="line"><span class="attr">DHCPV6C</span>=<span class="literal">no</span></div><div class="line"><span class="attr">STP</span>=<span class="literal">on</span></div><div class="line"><span class="attr">DEFROUTE</span>=<span class="literal">yes</span></div><div class="line"><span class="attr">PEERROUTES</span>=<span class="literal">yes</span></div><div class="line"><span class="attr">IPV4_FAILURE_FATAL</span>=<span class="literal">no</span></div><div class="line"><span class="attr">IPV6_DEFROUTE</span>=<span class="literal">yes</span></div><div class="line"><span class="attr">IPV6_PEERDNS</span>=<span class="literal">yes</span></div><div class="line"><span class="attr">IPV6_PEERROUTES</span>=<span class="literal">yes</span></div><div class="line"><span class="attr">IPV6_FAILURE_FATAL</span>=<span class="literal">no</span></div><div class="line"><span class="attr">DNS1</span>=<span class="number">192.168</span>.<span class="number">0.103</span></div><div class="line"><span class="attr">DNS2</span>=<span class="number">192.168</span>.<span class="number">0.103</span></div></pre></td></tr></table></figure></p>
 <p><strong>File: <code>/etc/sysconfig/network-scripts/ifcfg-enp6s0</code></strong><br><figure class="highlight ini"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attr">DEVICE</span>=enp6s0</div><div class="line"><span class="attr">ONBOOT</span>=<span class="literal">yes</span></div><div class="line"><span class="attr">BRIDGE</span>=br0</div></pre></td></tr></table></figure></p>

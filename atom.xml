@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://tobiashochguertel.github.io/blog/"/>
-  <updated>2017-06-15T17:32:23.669Z</updated>
+  <updated>2017-06-15T17:39:18.626Z</updated>
   <id>https://tobiashochguertel.github.io/blog/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://tobiashochguertel.github.io/blog/2017/06/14/OpenShift-Host/"/>
     <id>https://tobiashochguertel.github.io/blog/2017/06/14/OpenShift-Host/</id>
     <published>2017-06-14T16:01:15.000Z</published>
-    <updated>2017-06-15T17:32:23.669Z</updated>
+    <updated>2017-06-15T17:39:18.626Z</updated>
     
     <content type="html"><![CDATA[<h1 id="OpenShift-Host"><a href="#OpenShift-Host" class="headerlink" title="OpenShift Host"></a>OpenShift Host</h1><p>Konfiguration von Virtuellen Maschinen mit OpenShift Service auf dem KVM Host. (<em>Notizen der Umsetzung, keine Tutorial.</em>)</p>
 <a id="more"></a>
@@ -420,7 +420,7 @@
 <h3 id="STEP-2-SETUP-DOCKER-CREDENTIALS-AS-A-SECRET"><a href="#STEP-2-SETUP-DOCKER-CREDENTIALS-AS-A-SECRET" class="headerlink" title="STEP 2: SETUP DOCKER CREDENTIALS AS A SECRET:"></a>STEP 2: SETUP DOCKER CREDENTIALS AS A SECRET:</h3><p><strong>Alternative way, without json/yaml docker configuration file:</strong></p>
 <ul>
 <li><strong>Prefered Way!!</strong></li>
-<li>Use the Alternative way to create new docker secrets, not only that the type will be <code>kubernetes.io/dockercfg</code>, even the publishing will work fine to our internal privat nexu3 registry with https and insecure!</li>
+<li>Use the (this) Alternative way to create new docker secrets, not only that the type will be <code>kubernetes.io/dockercfg</code>, even the publishing will work fine to our internal privat nexus3 registry with https and insecure!</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">oc \</div><div class="line"> secrets \</div><div class="line"> new-dockercfg dockerhub \</div><div class="line"> --docker-server=DOCKER_REGISTRY_SERVER \</div><div class="line"> --docker-username=DOCKER_USER \</div><div class="line"> --docker-password=DOCKER_PASSWORD \</div><div class="line"> --docker-email=DOCKER_EMAIL</div></pre></td></tr></table></figure>
 <p>z.B.<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">oc \</div><div class="line"> secrets \</div><div class="line"> new-dockercfg hochguertel-dockercfg-dockerio \</div><div class="line"> --docker-server=https://index.docker.io/v1/ \</div><div class="line"> --docker-username=tobiashochguertel \</div><div class="line"> --docker-password=&lt;SECRET&gt; \</div><div class="line"> --docker-email=tobias.hochguertel@googlemail.com</div></pre></td></tr></table></figure></p>

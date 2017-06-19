@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tobiashochguertel.github.io/blog/2017/06/14/OpenShift-Host/</loc>
+    
+    <lastmod>2017-06-19T15:08:36.758Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://tobiashochguertel.github.io/blog/impressum/cookie-use/index.html</loc>
     
     <lastmod>2017-06-16T08:18:34.952Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://tobiashochguertel.github.io/blog/2017/06/13/KVM-HOST-CentOS-7-Virtualization-Host/</loc>
     
     <lastmod>2017-06-15T23:59:13.591Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tobiashochguertel.github.io/blog/2017/06/14/OpenShift-Host/</loc>
-    
-    <lastmod>2017-06-15T23:32:17.768Z</lastmod>
     
   </url>
   
